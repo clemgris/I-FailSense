@@ -97,32 +97,21 @@
     </div>
     <div class="footnote"><sup>*</sup> Equal contribution</div>
     <p>
-        Abstract: Language-conditioned robotic manipulation in
-        open-world settings requires not only accurate task execution
-        but also the ability to detect failures for robust deployment in
-        real-world environments. Although recent advances in vision-
-        language models (VLMs) have significantly improved the spatial
-        reasoning and task-planning capabilities of robots, they remain
-        limited in their ability to recognize their own failures. In par-
-        ticular, a critical yet underexplored challenge lies in detecting
-        semantic misalignment errors, where the robot executes a task
-        that is semantically meaningful but inconsistent with the given
-        instruction. To address this, we propose a method for building
-        datasets targeting Semantic Misalignment Failures detection,
-        from existing language-conditioned manipulation datasets. We
-        also present I-FailSense, an open-source VLM framework with
-        grounded arbitration designed specifically for failure detection.
-        Our approach relies on post-training a base VLM, followed
-        by training lightweight classification heads, called FS blocks,
-        attached to different internal layers of the VLM and whose
-        predictions are aggregated using an ensembling mechanism.
-        Experiments show that I-FailSense outperforms state-of-the-art
-        VLMs, both comparable in size and larger, in detecting semantic
-        misalignment errors. Notably, despite being trained only on
-        semantic misalignment detection, I-FailSense generalizes to
-        broader robotic failure categories and effectively transfers to
-        other simulation environments and real-world with zero-shot or
-        minimal post-training.
+        Language-conditioned robotic manipulation in open-world settings requires not only accurate task execution but
+        also the ability to detect failures for robust deployment in real-world environments. Although recent advances
+        in vision-language models (VLMs) have significantly improved the spatial reasoning and task-planning
+        capabilities of robots, they remain limited in their ability to recognize their own failures. In particular, a
+        critical yet underexplored challenge lies in detecting semantic misalignment errors, where the robot executes a
+        task that is semantically meaningful but inconsistent with the given instruction. To address this, we propose a
+        method for building datasets targeting Semantic Misalignment Failures detection, from existing
+        language-conditioned manipulation datasets. We also present I-FailSense, an open-source VLM framework with
+        grounded arbitration designed specifically for failure detection. Our approach relies on post-training a base
+        VLM, followed by training lightweight classification heads, called FS blocks, attached to different internal
+        layers of the VLM and whose predictions are aggregated using an ensembling mechanism. Experiments show that
+        I-FailSense outperforms state-of-the-art VLMs, both comparable in size and larger, in detecting semantic
+        misalignment errors. Notably, despite being trained only on semantic misalignment detection, I-FailSense
+        generalizes to broader robotic failure categories and effectively transfers to other simulation environments and
+        real-world with zero-shot or minimal post-training.
     </p>
     <div class="links">
         <a href="https://arxiv.org/abs/??" target="_blank">📄 arxiv </a>
