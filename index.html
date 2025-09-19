@@ -70,16 +70,43 @@
 </head>
 
 <body>
-    <h1>Title of the Paper</h1>
-    <h2>Authors: Your Name, Coauthor A, Coauthor B</h2>
+    <h1>I-FailSense: Towards General Robotic Failure Detection with Vision-Language Model</h1>
+    <h2>
+        Clémence Grislain<sup>*</sup>, Hamed Rahimi<sup>*</sup>, Olivier Sigaud, Mohamed Chetouani
+    </h2>
+    <p><small><sup>*</sup> Equal contribution</small></p>
     <p>
-        Abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae lectus vel velit tincidunt
-        fermentum.
+        Abstract: Language-conditioned robotic manipulation in
+        open-world settings requires not only accurate task execution
+        but also the ability to detect failures for robust deployment in
+        real-world environments. Although recent advances in vision-
+        language models (VLMs) have significantly improved the spatial
+        reasoning and task-planning capabilities of robots, they remain
+        limited in their ability to recognize their own failures. In par-
+        ticular, a critical yet underexplored challenge lies in detecting
+        semantic misalignment errors, where the robot executes a task
+        that is semantically meaningful but inconsistent with the given
+        instruction. To address this, we propose a method for building
+        datasets targeting Semantic Misalignment Failures detection,
+        from existing language-conditioned manipulation datasets. We
+        also present I-FailSense, an open-source VLM framework with
+        grounded arbitration designed specifically for failure detection.
+        Our approach relies on post-training a base VLM, followed
+        by training lightweight classification heads, called FS blocks,
+        attached to different internal layers of the VLM and whose
+        predictions are aggregated using an ensembling mechanism.
+        Experiments show that I-FailSense outperforms state-of-the-art
+        VLMs, both comparable in size and larger, in detecting semantic
+        misalignment errors. Notably, despite being trained only on
+        semantic misalignment detection, I-FailSense generalizes to
+        broader robotic failure categories and effectively transfers to
+        other simulation environments and real-world with zero-shot or
+        minimal post-training.
     </p>
     <div class="links">
-        <a href="paper.pdf" target="_blank">📄 Paper PDF</a>
-        <a href="https://github.com/yourusername/your-repo" target="_blank">💻 Code</a>
-        <a href="https://huggingface.co/your-model" target="_blank">🤗 HuggingFace</a>
+        <a href="https://arxiv.org/abs/??" target="_blank">📄 arxiv </a>
+        <a href="https://github.com/clemgirs/I-FailSense" target="_blank">💻 Code</a>
+        <a href="https://huggingface.co/??" target="_blank">🤗 HuggingFace</a>
     </div>
     <div class="coming-soon">Coming Soon 🚀</div>
 </body>
