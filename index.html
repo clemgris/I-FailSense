@@ -1,407 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paper Title — ICRA</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-    <!-- Basic styling -->
     <style>
-        :root {
-            --bg: #0f1724;
-            /* dark navy */
-            --card: #0b1220;
-            --muted: #9aa6b2;
-            --accent: #7dd3fc;
-            --glass: rgba(255, 255, 255, 0.03);
-            --paper: #ffffff;
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        html,
         body {
-            height: 100%;
-            margin: 0;
-            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial
-        }
-
-        body {
-            background: linear-gradient(180deg, #071024 0%, #071824 60%);
-            color: var(--paper);
-            line-height: 1.5
-        }
-
-        .page {
-            max-width: 980px;
-            margin: 48px auto;
-            padding: 28px;
-            border-radius: 14px;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.7);
-            backdrop-filter: blur(6px);
-        }
-
-        header {
             display: flex;
-            gap: 18px;
-            align-items: center
-        }
-
-        .logo {
-            width: 84px;
-            height: 84px;
-            border-radius: 10px;
-            flex: 0 0 84px;
-            background: linear-gradient(135deg, #7dd3fc66, #60a5fa44);
-            display: grid;
-            place-items: center;
-            color: #042029;
-            font-weight: 800;
-            font-size: 20px
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0c10;
+            color: #c5c6c7;
+            text-align: center;
         }
 
         h1 {
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: -0.4px
+            font-size: 2.5rem;
+            margin-bottom: 0.2em;
+            color: #66fcf1;
         }
 
-        .meta {
-            color: var(--muted);
-            margin-top: 6px
+        h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 1em;
+            font-weight: normal;
+            color: #45a29e;
         }
 
-        .actions {
-            margin-left: auto;
+        p {
+            max-width: 600px;
+            line-height: 1.5;
+        }
+
+        .links {
+            margin-top: 2em;
             display: flex;
-            gap: 8px
-        }
-
-        .btn {
-            background: var(--glass);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            padding: 10px 14px;
-            border-radius: 10px;
-            color: var(--paper);
-            text-decoration: none;
-            display: inline-flex;
-            gap: 10px;
-            align-items: center
-        }
-
-        .btn.secondary {
-            opacity: 0.9
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 24px;
-            margin-top: 22px
-        }
-
-        .card {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-            padding: 18px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.03)
-        }
-
-        .abstract {
-            font-size: 15px;
-            color: #dbe7ee
-        }
-
-        .toc {
-            margin-top: 16px
-        }
-
-        .sidebar .pdf-preview {
-            height: 420px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #071122;
-            display: flex;
-            align-items: center;
+            gap: 1em;
+            flex-wrap: wrap;
             justify-content: center;
-            color: var(--muted);
-            font-size: 14px
         }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-            margin: 12px 0 0 0
+        a {
+            padding: 0.6em 1.2em;
+            background: #1f2833;
+            color: #66fcf1;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.2s;
         }
 
-        .sidebar li {
-            margin: 8px 0
+        a:hover {
+            background: #45a29e;
+            color: #0b0c10;
         }
 
-        .badge {
-            display: inline-block;
-            padding: 6px 8px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            font-size: 13px
-        }
-
-        .section {
-            margin-top: 18px
-        }
-
-        .fig-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px
-        }
-
-        .fig {
-            border-radius: 8px;
-            overflow: hidden;
-            background: #061426;
-            padding: 6px
-        }
-
-        .fig img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            display: block
-        }
-
-        .fig .cap {
-            font-size: 13px;
-            color: var(--muted);
-            padding: 8px
-        }
-
-        footer {
-            margin-top: 28px;
-            color: var(--muted);
-            font-size: 13px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center
-        }
-
-        /* responsive */
-        @media (max-width:900px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar .pdf-preview {
-                height: 260px
-            }
-        }
-
-        /* subtle floating author avatars */
-        .authors {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin-top: 12px
-        }
-
-        .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: inline-grid;
-            place-items: center;
-            background: linear-gradient(135deg, #60a5fa 0%, #7dd3fc 100%);
-            color: #042029;
-            font-weight: 700
-        }
-
-        /* copyable bibtex */
-        .bib {
-            white-space: pre-wrap;
-            background: #061526;
-            padding: 12px;
-            border-radius: 8px;
-            color: #cfe8ff;
-            font-family: monospace;
-            font-size: 13px
-        }
-
-        /* search / tag pills */
-        .tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap
-        }
-
-        .tag {
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            font-size: 13px;
-            color: var(--muted)
+        .coming-soon {
+            margin-top: 3em;
+            font-size: 1.8rem;
+            color: #f1c40f;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <div class="page">
-        <header>
-            <div class="logo">ICRA</div>
-            <div>
-                <h1>Title of the Paper — short and punchy</h1>
-                <div class="meta">Authors: <strong>Your Name</strong>, Coauthor A, Coauthor B &ndash; <span
-                        class="badge">ICRA 2026 (submitted)</span></div>
-
-                <div class="authors">
-                    <div class="avatar">YN</div>
-                    <div class="avatar">CA</div>
-                    <div style="color:var(--muted);font-size:13px">Affiliations • contact@youremail.edu</div>
-                </div>
-            </div>
-
-            <div class="actions">
-                <a class="btn" href="paper.pdf" target="_blank">📄 Download PDF</a>
-                <a class="btn secondary" href="#bib">🔖 Cite</a>
-            </div>
-        </header>
-
-        <div class="grid">
-            <main class="card">
-                <section class="section">
-                    <h2 style="margin:0;font-size:18px">Abstract</h2>
-                    <p class="abstract">A compact abstract (2–4 sentences) describing the core idea, the main technical
-                        contribution, and a sentence on results or performance. Keep it short so visitors quickly
-                        understand the paper.</p>
-
-                    <div class="toc">
-                        <strong>Quick links:</strong>
-                        <a href="#figure-gallery"
-                            style="color:var(--accent);text-decoration:none;margin-left:8px">Figures</a>
-                        <a href="#supp"
-                            style="color:var(--accent);text-decoration:none;margin-left:8px">Supplementary</a>
-                        <a href="#code" style="color:var(--accent);text-decoration:none;margin-left:8px">Code</a>
-                    </div>
-                </section>
-
-                <section id="figure-gallery" class="section">
-                    <h3 style="margin:0 0 10px 0">Selected Figures</h3>
-                    <div class="fig-grid">
-                        <div class="fig"><img src="fig1.png" alt="Figure 1">
-                            <div class="cap">Figure 1: Example of our approach in simulation.</div>
-                        </div>
-                        <div class="fig"><img src="fig2.png" alt="Figure 2">
-                            <div class="cap">Figure 2: Real-world experiments on the robot.</div>
-                        </div>
-                        <div class="fig"><img src="fig3.png" alt="Figure 3">
-                            <div class="cap">Figure 3: Failure modes & qualitative analysis.</div>
-                        </div>
-                        <div class="fig"><img src="fig4.png" alt="Figure 4">
-                            <div class="cap">Figure 4: Ablation study plots.</div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="highlights" class="section">
-                    <h3 style="margin:0 0 10px 0">Highlights</h3>
-                    <ul style="margin-top:8px;color:var(--muted)">
-                        <li>Novel perception-planning pipeline with tight real-time guarantees.</li>
-                        <li>State-of-the-art performance on the <em>RoboDataset</em> benchmark.</li>
-                        <li>Open-source implementation and reproducible experiments.</li>
-                    </ul>
-                </section>
-
-                <section id="supp" class="section">
-                    <h3 style="margin:0 0 10px 0">Supplementary</h3>
-                    <p style="color:var(--muted);margin:0">Additional videos, extended proofs, and datasets are
-                        available below.</p>
-                    <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
-                        <a class="btn" href="supplementary.zip">📦 Supplementary ZIP</a>
-                        <a class="btn" href="https://youtube.com/your-video" target="_blank">▶️ Video</a>
-                        <a class="btn" href="#code">💻 Code repo</a>
-                    </div>
-                </section>
-
-                <section id="code" class="section">
-                    <h3 style="margin:0 0 10px 0">Code & Reproducibility</h3>
-                    <p style="color:var(--muted);margin:0">The code (ROS package + notebooks) is available on GitHub. We
-                        provide instructions for reproducing all experiments.</p>
-                    <div style="margin-top:10px"><a class="btn" href="https://github.com/yourusername/your-repo"
-                            target="_blank">View code on GitHub</a></div>
-                </section>
-
-                <section id="bib" class="section">
-                    <h3 style="margin:0 0 10px 0">How to cite</h3>
-                    <div class="bib">@inproceedings{your2026paper,
-                        title={Title of the Paper},
-                        author={Your Name and Coauthor A and Coauthor B},
-                        booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},
-                        year={2026}
-                        }</div>
-                    <div style="margin-top:8px"><button class="btn" onclick="copyBib()">Copy BibTeX</button></div>
-                </section>
-
-            </main>
-
-            <aside class="sidebar">
-                <div class="card">
-                    <div class="pdf-preview">PDF preview will appear here on GitHub Pages if you link to the
-                        PDF.<br><small style="color:var(--muted)">(Click &rarr; Download PDF)</small></div>
-
-                    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-                        <div class="tag">robotics</div>
-                        <div class="tag">perception</div>
-                        <div class="tag">planning</div>
-                        <div class="tag">real-time</div>
-                    </div>
-
-                    <h4 style="margin-top:12px">Paper stats</h4>
-                    <ul style="padding-left:18px;color:var(--muted)">
-                        <li>Pages: 8</li>
-                        <li>Supplementary: 1.2 GB</li>
-                        <li>Code: ROS + Python</li>
-                    </ul>
-
-                    <div style="margin-top:10px;display:flex;gap:8px">
-                        <a class="btn" href="#" id="doi-btn">DOI</a>
-                        <a class="btn" href="#" id="arxiv-btn">arXiv</a>
-                    </div>
-                </div>
-
-                <div class="card" style="margin-top:14px">
-                    <h4 style="margin:0">Contact</h4>
-                    <p style="color:var(--muted);margin-top:6px">Your Name — <a href="mailto:contact@youremail.edu"
-                            style="color:var(--accent);text-decoration:none">contact@youremail.edu</a></p>
-                    <p style="color:var(--muted);margin:0">Affiliation — <span style="font-weight:600">Lab /
-                            University</span></p>
-                </div>
-            </aside>
-        </div>
-
-        <footer>
-            <div>Built for ICRA submissions • <span style="color:var(--muted);">Generated template</span></div>
-            <div style="display:flex;gap:8px;align-items:center;color:var(--muted)">Share: <a href="#"
-                    style="color:var(--accent);text-decoration:none">Twitter</a> · <a href="#"
-                    style="color:var(--accent);text-decoration:none">LinkedIn</a></div>
-        </footer>
+    <h1>Title of the Paper</h1>
+    <h2>Authors: Your Name, Coauthor A, Coauthor B</h2>
+    <p>
+        Abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae lectus vel velit tincidunt
+        fermentum.
+    </p>
+    <div class="links">
+        <a href="paper.pdf" target="_blank">📄 Paper PDF</a>
+        <a href="https://github.com/yourusername/your-repo" target="_blank">💻 Code</a>
+        <a href="https://huggingface.co/your-model" target="_blank">🤗 HuggingFace</a>
     </div>
-
-    <script>
-        function copyBib() {
-            const bib = `@inproceedings{your2026paper,\n  title={Title of the Paper},\n  author={Your Name and Coauthor A and Coauthor B},\n  booktitle={Proceedings of the IEEE International Conference on Robotics and Automation (ICRA)},\n  year={2026}\n}`;
-            navigator.clipboard.writeText(bib).then(() => {
-                alert('BibTeX copied to clipboard');
-            }, () => alert('Could not copy'));
-        }
-    </script>
+    <div class="coming-soon">Coming Soon 🚀</div>
 </body>
 
 </html>
