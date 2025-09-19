@@ -1,61 +1,91 @@
 <!DOCTYPE html>
-gap: 0.5em;
-font-size: 1.1rem;
-}
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Title — ICRA</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0c10;
+            color: #c5c6c7;
+            text-align: center;
+        }
 
-.authors span {
-position: relative;
-}
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.2em;
+            color: #66fcf1;
+        }
 
+        h2 {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 0.3em;
+            font-weight: 500;
+            color: #45a29e;
+        }
 
-.footnote {
-font-size: 0.8rem;
-color: #f1c40f;
-margin-top: 0.3em;
-}
+        .authors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5em;
+            font-size: 1.1rem;
+        }
 
+        .authors span {
+            position: relative;
+        }
 
-p {
-max-width: 600px;
-line-height: 1.5;
-}
+        .footnote {
+            font-size: 0.8rem;
+            color: #f1c40f;
+            margin-top: 0.3em;
+        }
 
+        p {
+            max-width: 600px;
+            line-height: 1.5;
+        }
 
-.links {
-margin-top: 2em;
-display: flex;
-gap: 1em;
-flex-wrap: wrap;
-justify-content: center;
-}
+        .links {
+            margin-top: 2em;
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
+        a {
+            padding: 0.6em 1.2em;
+            background: #1f2833;
+            color: #66fcf1;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
 
-a {
-padding: 0.6em 1.2em;
-background: #1f2833;
-color: #66fcf1;
-text-decoration: none;
-border-radius: 6px;
-transition: 0.2s;
-}
+        a:hover {
+            background: #45a29e;
+            color: #0b0c10;
+        }
 
-
-a:hover {
-background: #45a29e;
-color: #0b0c10;
-}
-
-
-.coming-soon {
-margin-top: 3em;
-font-size: 1.8rem;
-color: #f1c40f;
-font-weight: bold;
-}
-</style>
+        .coming-soon {
+            margin-top: 3em;
+            font-size: 1.8rem;
+            color: #f1c40f;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 
 <body>
     <h1>I-FailSense: Towards General Robotic Failure Detection with Vision-Language Model</h1>
