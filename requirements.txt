@@ -1,0 +1,8 @@
+torch
+datasets
+transformers
+peft
+matplotlib
+seaborn
+scikit-learn
+huggingface_hub
