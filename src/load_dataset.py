@@ -88,8 +88,8 @@ def load_data(
                         "Loading ACIDE/AHA-Calvin-1p validation split and creating test split"
                     )
                     dataset = load_dataset("ACIDE/AHA-Calvin-1p", split="validation")
-                    # dataset = dataset.train_test_split(test_size=0.1, seed=seed)
-                    # dataset = dataset[split]
+                    dataset = dataset.train_test_split(test_size=0.1, seed=seed)
+                    dataset = dataset[split]
 
             elif pov == 2:
                 if split == "train":
@@ -100,8 +100,8 @@ def load_data(
                         "Loading ACIDE/AHA-Calvin-2p validation split and creating test split"
                     )
                     dataset = load_dataset("ACIDE/AHA-Calvin-2p", split="validation")
-                    # dataset = dataset.train_test_split(test_size=0.1, seed=seed)
-                    # dataset = dataset[split]
+                    dataset = dataset.train_test_split(test_size=0.1, seed=seed)
+                    dataset = dataset[split]
 
             else:
                 raise ValueError(f"POV '{pov}' is not supported for {dataset_name}")
