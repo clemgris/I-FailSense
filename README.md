@@ -25,7 +25,11 @@ pip install -r requirements.txt
 Pre-trained weights are available for evaluation:
 
 * **LoRA weights:** available on [Hugging Face](https://huggingface.co/collections/ACIDE/failsense-3b)
-* **FS block weights:** can be downloaded via `wget` (link to be added)
+* **FS block weights:** can be downloaded via `wget`
+
+```bash
+wget -c https://github.com/clemgris/I-FailSense/releases/tag/models/FS_blocks.zip
+```
 
 Run evaluation with:
 
